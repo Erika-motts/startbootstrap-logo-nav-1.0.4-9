@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Register Course</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="http://www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script
+    <![endif]-->
+
+</head>
+
+<body class="orangeback">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="Login.html" class="navbar-brand" href="#">
+                    <img src="check.png" style="width:45px;height:45px;">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                <li>
+                        <a href="#">Courses</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <form class="form-signin">
+    <div class="container-fluid">
+
+
+        <h2 class="form-signin-heading">Register Courses</h2>
+        <br>
+        <label for="inputCoursename" class="sr-only" >Course Name</label>
+        <input type="coursename" name="inp" id="inputCoursename" class="form-control" placeholder="Course Name" required autofocus ng-model="data.CourseName" ><br>
+        <label for="inputCRN" class="sr-only" >CRN</label>
+        <input type="crn" name="inp" id="inputCRN" class="form-control" placeholder="CRN" required autofocus ng-model="data.crn"><br>
+        <label for="inputSection" class="sr-only">Section Number</label>
+        <input type="section" name="sect" id="inputSection" class="form-control" placeholder="Section Number" ng-model="data.section"><br>
+
+
+
+
+<center><table >
+
+    <h4>Course Days</h4>
+
+    <tr>
+        <td><input type="checkbox" name="mon" value="monday" /></td>
+        <td>Monday</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="tues" value="tuesday" /></td>
+        <td>Tuesday</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="wed" value="wednesday"/></td>
+        <td>Wednesday</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="thurs" value="thursday"/></td>
+        <td>Thursday</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="fri" value="friday" /></td>
+        <td>Friday</td>
+    </tr>
+</table></center>
+
+<br><br>
+          <a href="Courses.html" <button type="button" class="btn btn-default" onclick="return validateForm();" ng-click="submit()">Continue</button></a>
+
+          <button type="submit" class="btn btn-default" onclick="adCourse">+ Add Another Course</button>
+
+
+
+</div>
+    </form>
+
+    <script type="text/javascript">
+        function validateForm()
+        {
+            var a=document.forms["sign"]["inp"].value;
+            var b=document.forms["sign"]["sect"].value;
+            if (a==null)
+            {
+                alert("Please Fill All Fields");
+                return false;
+            }
+            function adCourse() {
+                //on the click store to data base reload new page
+            }
+        }
+    </script>
+</body>
